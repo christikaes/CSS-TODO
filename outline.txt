@@ -1,0 +1,27 @@
+
+60 min
+
+5 min -- intro
+5 min -- what's cool in css3
+5 min -- why care about UX
+--
+5 min -- todo app outline
+5 min -- styling
+5 min -- usability test
+    * strike-through
+    * ellipses
+--
+5 min -- modify things in console
+5 min -- usability test
+    * color
+    * font-size
+
+--
+5 min -- a/b test by serving different css
+5 min -- usability test
+    * animations
+    
+--
+5 min -- example with vistaprint
+5 min -- conclusion
+

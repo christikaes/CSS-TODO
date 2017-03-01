@@ -1,0 +1,82 @@
+body {
+    background-color: turquoise;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    color: #212121;
+}
+
+.todo {
+    width: 50%;
+    margin-top: 30px;
+    padding: 20px;
+    background-color:aliceblue;
+    position: relative;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    padding: 10px;
+}
+
+.done + label {
+    display: flex;
+    width:100%
+}
+
+.done + label input {
+    padding: 5px;
+    background-color: transparent;
+    width: 100%;
+    margin-left: 10px;
+}
+
+/* Hide checkboxes and style labels */
+input[type="checkbox"] {
+    display: none;
+}
+
+/*************** ADD checkbox ********************/
+.add:not(:checked) + label {
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: limegreen;
+    border-radius: 50%;
+    font-size: 32px;
+    line-height: 30px; 
+    text-align: center;
+}
+
+.add:checked + label {
+    display: none;
+}
+
+/*************** DONE checkbox ********************/
+.add:not(:checked) ~ .done + label span {
+    display: none;
+}
+
+.add:checked ~ .done + label span {
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: white;
+    border-radius: 3px;
+    font-size: 32px;
+    line-height: 30px; 
+    text-align: center;
+}
+
+.add:checked ~ .done:checked + label span {
+    color: darkgreen;
+}

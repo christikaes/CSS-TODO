@@ -1,65 +1,148 @@
+/************ Page styles *************/
 body {
     background-color: #2196F3;
+    font-family: sans-serif;
     display: flex;
     justify-content: center;
 }
 
 h1 {
-    font-family: sans-serif;
     text-align: center;
     color: #212121;
 }
 
 .todo {
     width: 50%;
-    height: 500px;
     margin-top: 30px;
     padding: 20px;
     background-color: #E1F5FE;
+    position: relative;
 }
 
+ul {
+    padding: 0;
+}
 
 li {
     list-style: none;
+    display: flex;
+    padding: 10px;
 }
 
-.add, .done {
+.add + label {
+    text-align: center;
+}
+
+.done + label {
+    display: flex;
+    width:100%
+}
+
+.done + label span {
+    text-align: center;
+}
+
+.done + label input {
+    padding: 5px;
+    background-color: transparent;
+    width: 100%;
+    margin-left: 10px;
+}
+
+/* Don't display checkboxes so we can style with labels */
+input[type="checkbox"] {
     display: none;
 }
 
-.done + span {
-    display: none;
-}
+/************ Add checkbox *************/
 
-.add + span,
-.add:checked ~ .done + span {
+/* Before the list item has been added */
+.add:not(:checked) + label span {
     width: 30px;
     height: 30px;
-    display: inline-block;
-    background-size: contain;
-}
-
-.add + span {
-    background-color: limegreen;
-    color: #fff;
     font-size: 32px;
     line-height: 30px;
     text-align: center;
+    background-color: limegreen;
+    color: #fff;
     border-radius: 50%;
+
+    position: absolute;
+    bottom: 10%;
+    left: calc(10% - 30px);
 }
 
-.done + span {
-    background-color: #2196F3;
-}
-
-.done:checked + span {
-    background-color: green;
-}
-
-.add:checked + span {
+/* After the item has been added, hide the add checkbox */
+.add:checked + label span {
     display: none;
 }
 
-.add:checked + .done + span {
-    display: inline-block;
+/************ Done checkbox *************/
+
+/* Don't show the done check, until the item has been added */
+.add:not(:checked) ~ .done + label span {
+    display: none;
+}
+
+/* Once the item is added, show the done checkbox */
+.add:checked ~ .done + label span {
+    width: 30px;
+    height: 30px;
+    font-size: 32px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+    color: #fff;
+    border: 1px solid #212121;
+    border-radius: 10%;
+}
+
+/* When the done has been checked, show the check*/
+.add:checked ~ .done:checked + label span {
+    color: #2196F3;
+}
+
+/* Animate when hovering over */
+.add:checked ~ .done + label:hover {
+    transition: all 1s ease;
+    margin-left: 40px;
+    font-size: 30px;
+}
+
+.add:checked ~ .done + label:hover .task {
+    font-size: 20px;
+    transition: all 1s ease;
+}
+
+.add:checked ~ .done:checked + label {
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+/************ Task textbox *************/
+
+/* If the task has not been added yet, make the task editable */
+.add:not(:checked) ~ label .task {
+    pointer-events: all;
+    height: 30px;
+    border: 2px solid #2196F3;
+    border-radius: 3px;
+
+    position: absolute;
+    bottom: 10%;
+    width: 80%;
+    left: 10%;
+    background-color: #fff;
+}
+
+/* If the task has been added, make the task uneditable */
+.add:checked ~ label .task {
+    pointer-events: none;
+    border: none;
+    text-overflow: ellipsis;
+}
+
+/* If the task is done, cross it out */
+.done:checked ~ label .task {
+    text-decoration: line-through;
 }

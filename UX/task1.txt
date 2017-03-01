@@ -1,0 +1,7 @@
+
+
+1. Add the following taks to the todo list:
+* Learn CSS!
+* Call my mom and dad and let them know that I'm doing great as a super awesome developer
+
+2. Check off the first task

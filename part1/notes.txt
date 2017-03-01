@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link href="styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="todo">
+            <h1>CSS TODO</h1>
+            <ul>
+                <li>
+                    <input type="checkbox" class="add">
+                    <input type="checkbox" class="done">
+                    <input type="text" class="task">
+                </li>
+                <li>
+                    <input type="checkbox" class="add">
+                    <input type="checkbox" class="done">
+                    <input type="text" class="task">
+                </li>
+                <li>
+                    <input type="checkbox" class="add">
+                    <input type="checkbox" class="done">
+                    <input type="text" class="task">
+                </li>
+            </ul>
+    </body>
+</html>
+
+
+body {
+    background-color: #2196F3;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    color: #212121;
+}
+
+.todo {
+    width: 50%;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #E1F5FE;
+    position: relative;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    padding: 10px;
+}

@@ -1,0 +1,65 @@
+body {
+    background-color: #2196F3;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+    color: #212121;
+}
+
+.todo {
+    width: 50%;
+    height: 500px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #E1F5FE;
+}
+
+
+li {
+    list-style: none;
+}
+
+.add, .done {
+    display: none;
+}
+
+.done + span {
+    display: none;
+}
+
+.add + span,
+.add:checked ~ .done + span {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-size: contain;
+}
+
+.add + span {
+    background-color: limegreen;
+    color: #fff;
+    font-size: 32px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.done + span {
+    background-color: #2196F3;
+}
+
+.done:checked + span {
+    background-color: green;
+}
+
+.add:checked + span {
+    display: none;
+}
+
+.add:checked + .done + span {
+    display: inline-block;
+}
